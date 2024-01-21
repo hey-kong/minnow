@@ -1,5 +1,16 @@
-Stanford CS 144 Networking Lab
-==============================
+# CS144: Spring 2023
+
+## Lab
+
+- [ ] Checkpoint 0: networking warmup
+- [ ] Checkpoint 1: stitching substrings into a byte stream
+- [ ] Checkpoint 2: the TCP receiver
+- [ ] Checkpoint 3: the TCP sender
+- [ ] Checkpoint 4: down the stack
+- [ ] Checkpoint 5: building an IP router
+- [ ] Checkpoint 6: putting it all together
+
+## Note
 
 These labs are open to the public under the (friendly) request that to
 preserve their value as a teaching tool, solutions not be posted
