@@ -3,7 +3,7 @@
 ## Lab
 
 - [x] Checkpoint 0: networking warmup
-- [ ] Checkpoint 1: stitching substrings into a byte stream
+- [x] Checkpoint 1: stitching substrings into a byte stream
 - [ ] Checkpoint 2: the TCP receiver
 - [ ] Checkpoint 3: the TCP sender
 - [ ] Checkpoint 4: down the stack
