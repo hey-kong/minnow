@@ -35,11 +35,22 @@
 class NetworkInterface
 {
 private:
-  // Ethernet (known as hardware, network-access, or link-layer) address of the interface
+  // Ethernet (known as hardware, network-access, or link-layer) address of the interface.
   EthernetAddress ethernet_address_;
 
-  // IP (known as Internet-layer or network-layer) address of the interface
+  // IP (known as Internet-layer or network-layer) address of the interface.
   Address ip_address_;
+
+  // Map: IP address -> EthernetAddress.
+  std::unordered_map<uint32_t, std::pair<EthernetAddress, size_t>> mappings_ {};
+
+  // Frames ready to be sent, as their destination MAC addresses are known.
+  std::deque<EthernetFrame> ready_frames_;
+  // Frames not ready to be sent.
+  std::deque<std::pair<InternetDatagram, Address>> unready_frames_;
+
+  size_t timestamp_ { 0 };
+  std::unordered_map<uint32_t, uint64_t> arp_times_ {};
 
 public:
   // Construct a network interface with given Ethernet (network-access-layer) and IP (internet-layer)

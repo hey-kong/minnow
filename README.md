@@ -6,7 +6,7 @@
 - [x] Checkpoint 1: stitching substrings into a byte stream
 - [x] Checkpoint 2: the TCP receiver
 - [x] Checkpoint 3: the TCP sender
-- [ ] Checkpoint 4: down the stack
+- [x] Checkpoint 4: down the stack
 - [ ] Checkpoint 5: building an IP router
 - [ ] Checkpoint 6: putting it all together
 
