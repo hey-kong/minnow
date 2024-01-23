@@ -7,7 +7,7 @@
 - [x] Checkpoint 2: the TCP receiver
 - [x] Checkpoint 3: the TCP sender
 - [x] Checkpoint 4: down the stack
-- [ ] Checkpoint 5: building an IP router
+- [x] Checkpoint 5: building an IP router
 - [ ] Checkpoint 6: putting it all together
 
 ## Note
