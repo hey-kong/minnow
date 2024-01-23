@@ -3,11 +3,34 @@
 #include "byte_stream.hh"
 #include "tcp_receiver_message.hh"
 #include "tcp_sender_message.hh"
+#include <exception>
+#include <functional>
+#include <iostream>
 
 class TCPSender
 {
+private:
   Wrap32 isn_;
   uint64_t initial_RTO_ms_;
+
+  bool syn_ { false };
+  bool fin_ { false };
+
+  // The number of bytes sent by the sender.
+  uint64_t abs_seqno_ { 0 };
+  // The number of bytes acked by the sender.
+  uint64_t abs_ackno_ { 0 };
+  // Receiver's window size.
+  uint16_t window_size_ { 1 };
+  // Segments that are not acked.
+  std::deque<TCPSenderMessage> outstanding_segments_ {};
+  // Segments that need to be sent.
+  std::deque<TCPSenderMessage> queued_segments_ {};
+
+  bool active_ { false };
+  size_t timestamp_ { 0 };
+  uint64_t consecutive_retransmissions_ { 0 };
+  uint64_t cur_RTO_ { initial_RTO_ms_ };
 
 public:
   /* Construct TCP sender with given default Retransmission Timeout and possible ISN */
